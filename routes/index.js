@@ -12,7 +12,7 @@ router.get('/post', function (req, res) {
 
 
 function saveInDatabase(res, str, callback) {
-    MongoClient.connect("mongodb://admin:admin@ds017688.mlab.com:17688/smartparkingsystem", function (err, db) {
+    MongoClient.connect(mLabURL, function (err, db) {
         var col = db.collection('park');
         col.findOne(function (err, data) {
             if (data == null) {
@@ -51,7 +51,7 @@ router.get('/', function (req, res) {
 
 
 function getFromDatabase(callback) {
-    MongoClient.connect("mongodb://admin:admin@ds017688.mlab.com:17688/smartparkingsystem", function (err, db) {
+    MongoClient.connect(mLabURL, function (err, db) {
         var col = db.collection('park');
         col.find().limit(1).toArray(function (err, data) {
             callback(data[0].lol);
