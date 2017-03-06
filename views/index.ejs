@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="refresh" content="6">
+  <link rel='icon' type='image/png' href="images/icon.png">
+  <title>Smart Parking System - IoT and Microprocessor Projects</title>
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/animate.css">
+  <script src="/javascripts/jquery.min.js"></script>
+  <script src="/javascripts/bootstrapt.min.js"></script>
+  <style>
+    #time:hover{
+        color:#B03A16;
+    }
+    #abc:hover{
+        color:#EF6C00;
+    }
+  </style>
+</head>
+<body>
+    <nav class='navbar navbar-inverse' style='margin-bottom: 0px;border-radius: 0;border:0;background-color:#264057;color:white;height:120%' >
+		<div class="container-fluid">
+			<div class='navbar-header'>
+				<a href='#' class='navbar-brand active' style='color:white;font-size:26px' >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello</a>
+				<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#navbar'>
+					<span class='icon-bar'></span>
+					<span class='icon-bar'></span>
+					<span class='icon-bar'></span>
+				</button>
+			</div>
+			<div class='collapse navbar-collapse' id='navbar'>
+				<ul class='nav navbar-nav navbar-right'>
+						<li><a href="#"  style='color:white;font-size:22px' id='time'></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+    <div class='jumbotron' style='background-image:url("/images/bg.jpg");width:100%;height:940px;margin-bottom:0;'>
+        <div class='container'>
+            <div class='row' style='margin-top:100px;'>
+                <div class='col-sm-2'></div>
+                <div class='col-sm-8 wow bounceInUp' data-wow-duration='3s' data-wow-delay='1s' data-wow-iteration='1'  style='font-size:70px;color:white' id='abc'><center><b>Smart Parking System</b></center></div>
+                <div class='col-sm-2' ></div>
+            </div>
+
+            <div class='row' style='margin-top:340px;'>
+                <div class='col-sm-2'></div>
+                <div class='col-sm-8'><center><img src="/images/scroll.gif" ></center></div>
+                <div class='col-sm-2'></div>
+            </div>
+        </div>
+    </div> 
+
+    <div class='jumbotron' style='background-color:#4A148C;width:100%;margin-top:0;margin-bottom:0'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-sm-2'></div>
+                <div class='col-sm-8 wow lightSpeedIn' data-wow-duration="2s" data-wow-delay="2s" style='font-size:46px;color:white;padding:0'><center>REAL TIME PARKING STATUS</center></div>
+                <div class='col-sm-2'></div>
+            </div>
+        </div>
+    </div> 
+
+    <div class='container' style='border:0;margin:0;padding:0;width:100%;font-size:45px;background-color:#4A148C;color:white'>
+        <%if(data!=undefined){%>
+            <%if(data[0]=="1"){%>
+                <div class='col-sm-3 wow rollIn' data-wow-duration="2s" style='background-color:#DD2C00;border-radius:100%;border-right:"2px solid white";height:450px;padding-top:170px'><center>Slot 1</center></div>
+            <%}%>
+            <%if(data[0]=="0"){%>
+                <div class='col-sm-3 wow rollIn' data-wow-duration="2s" style='background-color:#43A047;border-radius:100%;border-right:"2px solid white";height:450px;padding-top:170px'><center>Slot 1</center></div>
+            <%}%>
+            <%if(data[1]=="1"){%>
+                <div class='col-sm-3 wow rollIn' data-wow-duration="2s" style='background-color:#DD2C00;border-radius:100%;border-right:"2px solid white";height:450px;padding-top:170px'><center>Slot 2</center></div>
+            <%}%>
+            <%if(data[1]=="0"){%>
+                <div class='col-sm-3 wow rollIn' data-wow-duration="2s" style='background-color:#43A047;border-radius:100%;border-right:"2px solid white";height:450px;padding-top:170px'><center>Slot 2</center></div>
+            <%}%>
+            <%if(data[2]=="1"){%>
+                <div class='col-sm-3 wow rollIn' data-wow-duration="2s" style='background-color:#DD2C00;border-radius:100%;border-right:"2px solid white";height:450px;padding-top:170px'><center>Slot 3</center></div>
+            <%}%>
+            <%if(data[2]=="0"){%>
+                <div class='col-sm-3 wow rollIn' data-wow-duration="2s" style='background-color:#43A047;border-radius:100%;border-right:"2px solid white";height:450px;padding-top:170px'><center>Slot 3</center></div>
+            <%}%>
+            <%if(data[3]=="1"){%>
+                <div class='col-sm-3 wow rollIn' data-wow-duration="2s" style='background-color:#DD2C00;border-radius:100%;border-right:"2px solid white";height:450px;padding-top:170px'><center>Slot 4</center></div>
+            <%}%>
+            <%if(data[3]=="0"){%>
+                <div class='col-sm-3 wow rollIn' data-wow-duration="2s" style='background-color:#43A047;border-radius:100%;border-right:"2px solid white";height:450px;padding-top:170px'><center>Slot 4</center></div>
+            <%}%>
+        <%}%>
+    </div>
+
+
+    <div class='container' style='padding:0;border:0;margin:0;background-color:#3E2723;color:white;width:100%'>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4" style="padding:20px;font-size:40px"><center><i>by</i> Lakshay Kapoor</center></div>
+        <div class="col-sm-4"></div>
+    </div>
+    
+    <script type='text/javascript'>
+        var d=new Date();
+	    var monthnum=d.getMonth();
+	    var month;
+	    var date=d.getDate().toString();
+	    var year=d.getFullYear().toString();
+	    if(date<10){
+		    date="0"+date;
+	    }
+	    if(monthnum==0) month="Jan";
+	    if(monthnum==1) month="Feb";
+	    if(monthnum==2) month="Mar";
+	    if(monthnum==3) month="Apr";
+	    if(monthnum==4) month="May";
+	    if(monthnum==5) month="Jun";
+	    if(monthnum==6) month="Jul";
+	    if(monthnum==7) month="Aug";
+	    if(monthnum==8) month="Sep";
+	    if(monthnum==9) month="Oct";
+	    if(monthnum==10) month="Nov";
+	    if(monthnum==11) month="Dec";
+
+	    var currentdate=date+"-"+month+"-"+year;
+        document.getElementById('time').innerHTML=currentdate;
+
+    </script>
+
+<script src='javascripts/wow.js'></script>
+<script type='text/javascript'>
+new WOW().init();
+</script>
+</body>
+</html>
